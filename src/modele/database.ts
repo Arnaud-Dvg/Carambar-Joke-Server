@@ -5,7 +5,8 @@ dotenv.config();
 
 const sequelize = new Sequelize({
   dialect: "sqlite",
-  storage: process.env.DB_NAME || "./src/modele/jokes.sqlite",
+  storage: "./src/modele/jokes.sqlite", // Chemin relatif depuis la racine du projet
+  logging: false,
 });
 
 export default sequelize;

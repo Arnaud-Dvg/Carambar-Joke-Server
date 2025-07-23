@@ -3,39 +3,25 @@ import express from "express";
 import route from "./routes/route";
 import swaggerUi from "swagger-ui-express";
 import swaggerSpec from "./swagger/swaggerConfig";
-import sequelize from "./modele/database";
 import cors from "cors";
-
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middlewares
+// Middleware
+app.use(cors());
 app.use(express.json());
 
-app.use(cors({
-  origin: "*",
-}));
-
-// Routes
-app.use("/api/v1/blagues", route);
-
-// Swagger documentation
+// Swagger
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-// Connexion BDD + lancement
-(async () => {
-  try {
-    await sequelize.authenticate();
-    console.log("✅ Connexion à SQLite réussie.");
-    await sequelize.sync();
-    app.listen(PORT, () => {
-      console.log(`🚀 Serveur lancé sur http://localhost:${PORT}`);
-      console.log(`📚 Swagger : http://localhost:${PORT}/api-docs`);
-    });
-  } catch (error) {
-    console.error("❌ Erreur de connexion à la BDD :", error);
-  }
-})();
+// Routes
+app.use(route);
+
+// Serveur
+app.listen(PORT, () => {
+  console.info(`🚀 Serveur lancé sur http://localhost:${PORT}`);
+  console.info(`📚 Swagger dispo sur http://localhost:${PORT}/api-docs`);
+});
