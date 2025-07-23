@@ -18,11 +18,13 @@ const jokeAction = {
     res.status(200).json(joke);
   },
 
-  // GET /api/v1/blagues/random
   async readRandom(req: Request, res: Response) {
-    const joke = await jokeRepository.findRandom();
-    res.status(200).json(joke);
-  },
+  const joke = await jokeRepository.findRandom();
+  if (!joke) {
+    return res.status(404).json({ message: "Aucune blague trouvée." });
+  }
+  res.status(200).json(joke);
+},
 
   // POST /api/v1/blagues
   async create(req: Request, res: Response) {

@@ -13,11 +13,12 @@ const jokeRepository = {
 
   // Récupérer une blague aléatoire
   async findRandom() {
-    const count = await Joke.count();
-    const randomIndex = Math.floor(Math.random() * count);
-    const jokes = await Joke.findAll({ limit: 1, offset: randomIndex });
-    return jokes[0];
-  },
+  const count = await Joke.count();
+  if (count === 0) return null;
+  const randomIndex = Math.floor(Math.random() * count);
+  const jokes = await Joke.findAll({ limit: 1, offset: randomIndex });
+  return jokes[0];
+},
 
   // Créer une nouvelle blague
   async create(content: string) {
