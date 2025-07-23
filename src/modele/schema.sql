@@ -1,11 +1,11 @@
-DROP TABLE IF EXISTS Joke;
+DROP TABLE IF EXISTS jokes;
 
-CREATE TABLE Joke (
+CREATE TABLE jokes (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   content TEXT NOT NULL
 );
 
-INSERT INTO Joke (content) VALUES
+INSERT INTO jokes (content) VALUES
 ('Quelle est la femelle du hamster ? L’Amsterdam'),
 ('Que dit un oignon quand il se cogne ? Aïe'),
 ('Quel est l''animal le plus heureux ? Le hibou, parce que sa femme est chouette.'),
