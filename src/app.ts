@@ -4,6 +4,8 @@ import route from "./routes/route";
 import swaggerUi from "swagger-ui-express";
 import swaggerSpec from "./swagger/swaggerConfig";
 import sequelize from "./modele/database";
+import cors from "cors";
+
 
 dotenv.config();
 
@@ -12,6 +14,10 @@ const PORT = process.env.PORT || 3000;
 
 // Middlewares
 app.use(express.json());
+
+app.use(cors({
+  origin: "*",
+}));
 
 // Routes
 app.use("/api/v1/blagues", route);
