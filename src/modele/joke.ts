@@ -8,7 +8,7 @@ const Joke = sequelize.define("Joke", {
   },
 }, {
   tableName: "jokes",
-  timestamps: true,
+  timestamps: false,
 });
 
 export default Joke;
