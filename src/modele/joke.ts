@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize";
 import sequelize from "./database";
 
-const Joke = sequelize.define("Joke", {
+const Joke = sequelize.define("jokes", {
   content: {
     type: DataTypes.STRING,
     allowNull: false,

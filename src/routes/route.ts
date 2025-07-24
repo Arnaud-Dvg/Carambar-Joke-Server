@@ -76,8 +76,7 @@ router.get("/random", jokeAction.readRandom);
  *         description: Blague non trouvée
  */
 // Récupère une blague via son ID
-router.get("/:id", jokeAction.readOne);
-
+router.get("/:id([0-9]+)", jokeAction.readOne);
 
 /**
  * @swagger

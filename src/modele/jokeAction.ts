@@ -14,7 +14,6 @@ const jokeAction = {
         console.log("Je suis là readOne");
 
     const jokeId = Number(req.params.id);
-    console.log("Je suis là");
     const joke = await jokeRepository.findById(jokeId);
     if (!joke) {
       return res.status(404).json({ message: "Blague non trouvée" });

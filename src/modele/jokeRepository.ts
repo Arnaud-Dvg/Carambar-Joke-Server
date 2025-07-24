@@ -14,14 +14,14 @@ const jokeRepository = {
   // Récupérer une blague aléatoire
   async findRandom() {
   try {
-    const count = await Joke.count();
-    console.log("Nombre total de blagues :", count);
+    // const count = await Joke.count();
+    // console.log("Nombre total de blagues :", count);
 
-    if (count === 0) {
-      throw new Error("Aucune blague trouvée.");
-    }
+    // if (count === 0) {
+    //   throw new Error("Aucune blague trouvée.");
+    // }
 
-    const randomIndex = Math.floor(Math.random() * count);
+    const randomIndex = Math.floor(Math.random() * 2);
     console.log("Index aléatoire :", randomIndex);
 
     const jokes = await Joke.findAll({ limit: 1, offset: randomIndex });
