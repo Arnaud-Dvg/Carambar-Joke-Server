@@ -1,3 +1,5 @@
+// Ce fichier définit les routes Express pour gérer les blagues (API REST).
+// Il connecte les URL aux fonctions définies dans `jokeAction` pour lire, créer et tirer des blagues aléatoires.
 const express = require("express");
 const router = express.Router();
 import jokeAction from "../modele/jokeAction";

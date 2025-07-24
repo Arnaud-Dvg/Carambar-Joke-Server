@@ -1,12 +1,13 @@
+// Ce fichier est le point d'entrée principal de l'application Express.
+// Il configure les middlewares, la documentation Swagger, les routes, et démarre le serveur.
 import dotenv from "dotenv";
 import express from "express";
 import route from "./routes/route";
 import swaggerUi from "swagger-ui-express";
 import swaggerSpec from "./swagger/swaggerConfig";
 import cors from "cors";
-import { QueryTypes } from "sequelize";
-
 import sequelize from "./modele/database";
+
 async function testConnection() {
   try {
     await sequelize.authenticate();
@@ -16,8 +17,8 @@ async function testConnection() {
     console.error("❌ Échec de la connexion :", error);
   } 
 }
-
 testConnection();
+
 dotenv.config();
 
 const app = express();
@@ -29,12 +30,12 @@ app.use(express.json());
 
 // Swagger
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-console.log("Test app.t")
+
 // Routes
 app.use("/api/v1/blagues", route);
 
 // Serveur
 app.listen(PORT, () => {
-  console.info(`🚀 Serveur lancé sur http://localhost:${PORT}`);
-  console.info(`📚 Swagger dispo sur http://localhost:${PORT}/api-docs`);
+  console.info(`Serveur lancé sur http://localhost:${PORT}`);
+  console.info(`Swagger dispo sur http://localhost:${PORT}/api-docs`);
 });

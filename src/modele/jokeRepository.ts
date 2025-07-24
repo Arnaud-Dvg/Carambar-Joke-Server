@@ -1,3 +1,5 @@
+// Ce fichier gère les requêtes vers la base de données pour les blagues (modèle Joke).
+// Il fournit des fonctions pour lire, créer, et tirer une blague aléatoire.
 import Joke from "./joke";
 
 const jokeRepository = {
@@ -15,18 +17,11 @@ const jokeRepository = {
   async findRandom() {
   try {
     const count = await Joke.count();
-    console.log("Nombre total de blagues :", count);
-
     if (count === 0) {
       throw new Error("Aucune blague trouvée.");
     }
-
     const randomIndex = Math.floor(Math.random() * count);
-    console.log("Index aléatoire :", randomIndex);
-
     const jokes = await Joke.findAll({ limit: 1, offset: randomIndex });
-    console.log("Blague récupérée :", jokes[0]);
-
     return jokes[0];
   } catch (error) {
     console.error("Erreur dans jokeRepository.findRandom:", error);
