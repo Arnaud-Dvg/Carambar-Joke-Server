@@ -1,11 +1,11 @@
 🎉 API Blagues – Carambar & Co
 Mini API REST conçue dans le cadre d’un projet de sélection | CDA, permettant de gérer une liste de blagues façon "Carambar", avec un backend en Node.js, Express, Sequelize et SQLite.
 
-📌 Objectifs du projet
-Démontrer la maîtrise de la stack Node.js / Express avec base SQLite
-Créer une API versionnée et documentée
-Renvoyer des blagues aléatoires ou ciblées via des endpoints REST
-Déployer le backend sur Render.com et le frontend (React) sur GitHub Pages
+📌 Objectifs du projet  
+Démontrer la maîtrise de la stack Node.js / Express avec base SQLite  
+Créer une API versionnée et documentée  
+Renvoyer des blagues aléatoires ou ciblées via des endpoints REST  
+Déployer le backend sur Render.com et le frontend (React) sur GitHub Pages  
 ---
 
 
