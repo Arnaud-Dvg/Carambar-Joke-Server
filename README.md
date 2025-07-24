@@ -1,90 +1,67 @@
-# 🎉 API Blagues – Carambar & Co  
+# 🎉 API Blagues – Carambar & Co
+
+Une API REST développée pour un projet personnel permettant de stocker et de récupérer des blagues façon “Carambar”.  
+Le projet repose sur une architecture simple mais solide : Express.js pour le serveur, Sequelize pour la couche ORM, et SQLite pour la base de données.
 
 ---
 
-## Mini API REST conçue dans le cadre d’un projet de sélection | CDA
+## 📌 Pourquoi ce projet ?
 
-Permettant de gérer une liste de blagues façon "Carambar", avec un backend en **Node.js**, **Express**, **Sequelize** et **SQLite**.
-
----
-
-## 📌 Objectifs du projet  
-
-- Démontrer la maîtrise de la stack Node.js / Express avec base SQLite  
-- Créer une API versionnée et documentée  
-- Renvoyer des blagues aléatoires ou ciblées via des endpoints REST  
-- Déployer le backend sur Render.com et le frontend (React) sur GitHub Pages  
+- 🧠 Mettre en pratique un backend avec Node.js et une base de données locale  
+- 🛠️ Construire une API RESTful propre, claire et versionnée  
+- 🔄 Générer des blagues aléatoires ou ciblées grâce à des routes dédiées  
+- ☁️ Déployer l’ensemble sur Render pour la partie API et GitHub Pages pour l’interface React  
 
 ---
 
-## 🛠️ Stack technique
+## 🧰 Technologies utilisées
 
-- **Node.js** – Environnement d’exécution JavaScript  
-- **Express** – Framework minimaliste pour créer le serveur  
-- **Sequelize** – ORM pour faciliter les requêtes SQL  
-- **SQLite** – Base de données légère, locale  
-- **TypeScript** – Pour le typage et la robustesse  
-- **Swagger** – Pour la documentation interactive de l’API  
-- **Dotenv** – Pour sécuriser les variables d’environnement  
-
----
-
-## 📮 Endpoints disponibles
-
-| Méthode | URL             | Description                       |
-|--------:|------------------|-----------------------------------|
-| `GET`   | `/jokes`         | Récupère toutes les blagues       |
-| `GET`   | `/jokes/:id`     | Récupère une blague par son ID    |
-| `GET`   | `/jokes/random`  | Récupère une blague aléatoire     |
-| `POST`  | `/jokes`         | Ajoute une nouvelle blague        |
+- **Node.js** : moteur JavaScript pour l’exécution côté serveur  
+- **Express** : framework rapide et minimaliste pour gérer les routes  
+- **Sequelize** : ORM facilitant l’interaction avec la base de données  
+- **SQLite** : base embarquée idéale pour des projets légers  
+- **TypeScript** : langage typé pour sécuriser le développement  
+- **Swagger** : pour tester et documenter les routes de l’API  
+- **Dotenv** : pour centraliser les variables sensibles
+- **Taiwind CSS** : framework utilitaire pour un design rapide et responsive
 
 ---
 
-## 🌐 API en ligne
+## 📮 Liste des endpoints
 
-🔗 https://carambar-joke-server.onrender.com
+| Méthode | URL              | Fonction                         |
+|---------|------------------|----------------------------------|
+| GET     | `/jokes`         | Renvoie toutes les blagues       |
+| GET     | `/jokes/:id`     | Donne une blague selon un ID     |
+| GET     | `/jokes/random`  | Sélectionne une blague au hasard |
+| POST    | `/jokes`         | Permet d’enregistrer une blague  |
 
 ---
 
-## 📘 Documentation Swagger
+## 🌍 Accès en ligne
 
-🧾 https://carambar-joke-server.onrender.com/api-docs/
+- 🔗 API : https://carambar-joke-server.onrender.com  
+- 📘 Swagger : https://carambar-joke-server.onrender.com/api-docs/
 
 ---
 
-## 🖥️ Lancer le projet en local
+## ⚙️ Lancer le projet en local
 
-1. **Cloner le projet :**  
+1. Cloner le dépôt :  
    `git clone https://github.com/arnaud-dvg/carambar-joke-server.git`  
-   `cd carambar-joke-server`  
+   `cd carambar-joke-server`
 
-2. **Installer les dépendances :**  
+2. Installer les modules :  
    `npm install`
 
-3. **Lancer le serveur :**  
+3. Démarrer le serveur :  
    `npm run dev`
 
----
-
-## 📁 Structure du projet
-
-carambar-joke-server/
-├── src/
-│   ├── controllers/
-│   ├── models/
-│   ├── routes/
-│   ├── database/
-│   └── app.ts
-├── swagger.json
-└── ...
-
-yaml
-Copier
-Modifier
+Le serveur s'exécute sur `http://localhost:3000` par défaut.
 
 ---
 
 ## 👨‍💻 Auteur
 
-Projet développé par **Arnaud DVG**  
+Développé avec humour et passion par **Arnaud DVG**  
 🔗 https://github.com/arnaud-dvg
