@@ -5,6 +5,19 @@ import swaggerUi from "swagger-ui-express";
 import swaggerSpec from "./swagger/swaggerConfig";
 import cors from "cors";
 
+import sequelize from "./modele/database";
+async function testConnection() {
+  try {
+    await sequelize.authenticate();
+    console.log("✅ Connexion à SQLite réussie !");
+  } catch (error) {
+    console.error("❌ Échec de la connexion :", error);
+  } finally {
+    await sequelize.close();
+  }
+}
+
+testConnection();
 dotenv.config();
 
 const app = express();
