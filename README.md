@@ -7,6 +7,8 @@ Créer une API versionnée et documentée
 Renvoyer des blagues aléatoires ou ciblées via des endpoints REST
 Déployer le backend sur Render.com et le frontend (React) sur GitHub Pages
 ---
+
+
 🛠️ Stack technique
 Node.js – Environnement d’exécution JavaScript
 Express – Framework minimaliste pour créer le serveur
