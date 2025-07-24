@@ -12,10 +12,6 @@ async function testConnection() {
     await sequelize.authenticate();
     console.log("✅ Connexion à SQLite réussie !");
     // Récupération
-const jokes = await sequelize.query("SELECT * FROM jokes", {
-  type: QueryTypes.SELECT,
-});
-console.log(jokes)
   } catch (error) {
     console.error("❌ Échec de la connexion :", error);
   } 
