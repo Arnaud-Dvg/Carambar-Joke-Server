@@ -12,9 +12,7 @@ async function testConnection() {
     console.log("✅ Connexion à SQLite réussie !");
   } catch (error) {
     console.error("❌ Échec de la connexion :", error);
-  } finally {
-    await sequelize.close();
-  }
+  } 
 }
 
 testConnection();
