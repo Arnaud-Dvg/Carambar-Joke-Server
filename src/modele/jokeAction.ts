@@ -1,6 +1,5 @@
 import jokeRepository from "./jokeRepository";
 import { Request, Response } from "express";
-import Joke from "./joke";
 
 const jokeAction = {
   // GET /api/v1/blagues
@@ -25,7 +24,7 @@ const jokeAction = {
   async readRandom(req: Request, res: Response) {
         console.log("Je suis là readRandom");
 
-    const joke = await Joke.findAll();
+  const joke = await jokeRepository.findRandom();
   if (!joke) {
     return res.status(404).json({ message: "Aucune blague trouvée." });
   }
