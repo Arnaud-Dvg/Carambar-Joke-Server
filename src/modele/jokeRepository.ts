@@ -24,7 +24,7 @@ const jokeRepository = {
     const randomIndex = Math.floor(Math.random() * 2);
     console.log("Index aléatoire :", randomIndex);
 
-    const jokes = await Joke.findAll({ limit: 1, offset: randomIndex });
+    const jokes = await Joke.findAll();
     console.log("Blague récupérée :", jokes[0]);
 
     return jokes[0];
