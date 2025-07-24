@@ -4,12 +4,18 @@ import route from "./routes/route";
 import swaggerUi from "swagger-ui-express";
 import swaggerSpec from "./swagger/swaggerConfig";
 import cors from "cors";
+import { QueryTypes } from "sequelize";
 
 import sequelize from "./modele/database";
 async function testConnection() {
   try {
     await sequelize.authenticate();
     console.log("✅ Connexion à SQLite réussie !");
+    // Récupération
+const jokes = await sequelize.query("SELECT * FROM jokes", {
+  type: QueryTypes.SELECT,
+});
+console.log(jokes)
   } catch (error) {
     console.error("❌ Échec de la connexion :", error);
   } 
