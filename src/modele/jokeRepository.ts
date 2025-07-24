@@ -21,10 +21,10 @@ const jokeRepository = {
       throw new Error("Aucune blague trouvée.");
     }
 
-    const randomIndex = Math.floor(Math.random() * 2);
+    const randomIndex = Math.floor(Math.random() * count);
     console.log("Index aléatoire :", randomIndex);
 
-    const jokes = await Joke.findAll();
+    const jokes = await Joke.findAll({ limit: 1, offset: randomIndex });
     console.log("Blague récupérée :", jokes[0]);
 
     return jokes[0];
