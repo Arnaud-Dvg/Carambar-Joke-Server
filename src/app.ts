@@ -16,7 +16,7 @@ app.use(express.json());
 
 // Swagger
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-
+console.log("Test app.t")
 // Routes
 app.use("/api/v1/blagues", route);
 
