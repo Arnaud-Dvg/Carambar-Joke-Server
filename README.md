@@ -40,6 +40,7 @@ Le projet repose sur une architecture simple mais solide : Express.js pour le se
 
 ## 🌍 Accès en ligne
 
+- 🖥️ Frontend : https://arnaud-dvg.github.io/carambar-joke-client/  
 - 🔗 API : https://carambar-joke-server.onrender.com  
 - 📘 Swagger : https://carambar-joke-server.onrender.com/api-docs/
 
