@@ -28,6 +28,27 @@ router.get("/", jokeAction.readAll);
 
 /**
  * @swagger
+ * /blagues/random:
+ *   get:
+ *     summary: Récupère une blague aléatoire
+ *     tags: [Blagues]
+ *     responses:
+ *       200:
+ *         description: Une blague aléatoire
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 id:
+ *                   type: integer
+ *                 content:
+ *                   type: string
+ */
+// Récupère une blague aléatoire
+router.get("/random", jokeAction.readRandom);
+/**
+ * @swagger
  * /blagues/{id}:
  *   get:
  *     summary: Récupère une blague par ID
@@ -57,27 +78,6 @@ router.get("/", jokeAction.readAll);
 // Récupère une blague via son ID
 router.get("/:id", jokeAction.readOne);
 
-/**
- * @swagger
- * /blagues/random:
- *   get:
- *     summary: Récupère une blague aléatoire
- *     tags: [Blagues]
- *     responses:
- *       200:
- *         description: Une blague aléatoire
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 id:
- *                   type: integer
- *                 content:
- *                   type: string
- */
-// Récupère une blague aléatoire
-router.get("/random", jokeAction.readRandom);
 
 /**
  * @swagger
